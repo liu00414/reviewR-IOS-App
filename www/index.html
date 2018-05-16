@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http: 'unsafe-eval' ws:; style-src 'self' 'unsafe-inline' https:; media-src *; img-src 'self' data: content: http:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/tinyshell.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Reviewr App</title>
+</head>
+
+<body>
+    <!--   home page-->
+    <div class="page  active" id="home">
+        <p id="open-msg">Hi Dear,<br><span class="icon heart"></span>Please press add button at up right corner and make reviews.<span class="icon heart"></span><br>&copy;<time datetime="2018">2018</time> Le Liu</p>
+        
+
+
+        <ul class="list-view">
+            
+        </ul>
+
+        <nav>REVIEWR<button id="add" class="add-btn icon add">Add</button></nav>
+    </div>
+    <!--    add new page-->
+    <div class="page" id="add-new">
+
+
+
+
+        <div class="container">
+
+
+
+            <form>
+                <p class="form-row">
+                    <input type="text" id="title" required/>
+                    <label for="title">Title</label>
+                </p>
+            </form>
+
+            <!--            <input type="text" id="input-title" placeholder="Title">-->
+            <div class="rating stars">
+
+                <span class="star">&nbsp;</span>
+                <span class="star">&nbsp;</span>
+                <span class="star">&nbsp;</span>
+                <span class="star">&nbsp;</span>
+                <span class="star">&nbsp;</span>
+            </div>
+            <button id="take-btn" class="icon camera"></button>
+            <div id="instruction" class="">Step1: Take a photo.<br>Step2: Give it a title and rating<br>Step3:Save it!</div>
+            <img src="" alt="" id="photo">
+            <div class="pop-msg"><p id="msg"></p></div>
+            
+        </div>
+
+
+        <nav>
+            <button id="cancel" class="cancel-btn icon cancel">Cancel</button>
+            <button id="save" class="save-btn icon save" >Save</button>
+        </nav>
+
+    </div>
+    <!--    detail page-->
+    <div class="page" id="photo-detail">
+
+        <div id="detail-container">
+            
+            
+        </div>
+<div class="pop-msg"><p id="del-msg">This photo has been deleted!</p></div>
+        <nav>
+            <button id="back" class="back-btn icon arrow_left">back</button>
+            <button id="delete" class="delete-btn icon delete">delete</button>
+        </nav>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/tinyshell.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

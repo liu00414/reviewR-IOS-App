@@ -1,0 +1,271 @@
+html {
+    font-family: 'San Francisco','Open Sans', sans-serif;
+    color: #000000;
+}
+
+
+/*page*/
+
+.page {
+    display: block;
+    visibility: hidden;
+/*    display: none;*/
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.page.active {
+    visibility: visible;
+/*    display: block;*/
+}
+
+
+/*navbar*/
+
+nav {
+    
+    position: sticky;
+    color: #4a76c3;
+    font-size: 0.8rem;
+    height: 2.4rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 2.4rem;
+}
+
+nav>button {
+    position: absolute;
+    line-height: 2.4rem;
+}
+
+.cancel-btn,
+.back-btn {
+    left: 0;
+    font-size: .8rem;
+}
+
+.save-btn,
+.add-btn,
+.delete-btn {
+    right: 0;
+    font-size: .8rem;
+}
+
+
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+
+/*content*/
+
+.container {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.form-row {
+    font-size: 2rem;
+    text-align: left;
+}
+
+input {
+    border-radius: 0;
+    background-color: transparent;
+    caret-color:#6292e8;
+}
+
+input:required:valid+label,
+input:required:focus+label {
+    transform: translateY(-3rem);
+    color: #6292e8;
+}
+
+#take-btn {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+#instruction{
+    font-size: .8rem;
+    background-color: #6292e8;
+    color: #ffffff;
+    margin: 1.5rem 1rem;
+    padding: 2rem .5rem; 
+    border-radius: 12px;
+    
+}
+
+#take-btn.hidden,#instruction.hidden {
+    display: none;
+}
+
+
+/*star rating*/
+
+#add-new .stars {
+    margin-top: 1rem;
+    margin-left: 7vw;
+}
+
+.star {
+    color: goldenrod;
+    font-size: .8rem;
+    position: relative;
+    padding: 0 .5rem;
+    /* space out the stars */
+}
+
+.star::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '\2606';
+    cursor: pointer;
+}
+
+.star:hover::before {
+    /* the :hover should come first */
+    content: '\2605' !important;
+/*    color: #bada55;*/
+}
+
+.star.rated::before {
+    /* the :hover should come first */
+    content: '\2605' !important;
+}
+
+#add-new span.star {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+}
+
+
+/*list-review*/
+
+.list-view {
+    margin: 3rem 0;
+}
+
+.list-item p:nth-of-type(2) {
+    min-height: 2rem;
+}
+.list-item p{
+    font-size: .8rem;
+}
+
+.list-item>p,
+.list-item>span {
+    pointer-events: none;
+    color: black;
+}
+.list-item,.list-item:last-child{
+    border-color: rgba(110,153,234,0.3);
+}
+
+.list-item:nth-child(2n+1){
+    background-color: #fafbff;
+    
+}
+/*
+.list-item:nth-child(2n+1)>p,.list-item:nth-child(2n+1)>span{
+    color: #ffffff;
+}
+*/
+
+/*  detail page*/
+
+#detail-container {
+    margin-top: 3.5rem;
+    text-align: center;
+}
+
+#detail-container img {
+    margin-top: 1rem;
+    width: 95vw;
+}
+
+#detail-container span.star {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+}
+
+
+/*add-new page*/
+#photo.active{
+    display: block;
+}
+#photo {
+    display: none;
+    width: 95vw;
+    height: auto;
+    margin: auto;
+    margin-top: 1rem;
+    
+    
+}
+
+.icon::before {
+    display: inline-block;
+    font-size: .8rem;
+    vertical-align: text-bottom;
+    color: #6392e8;
+}
+
+.icon.camera::before {
+    font-size: 3rem;
+}
+
+
+/*
+#take-btn{
+    font-size: .8rem;
+}*/
+
+.pop-msg {
+    width: 90vw;
+    height: 60vw;
+    background-color: #618dde;
+font-size: .8rem;
+    border-radius: 12px;
+    position: absolute;
+    top: 60%;
+    left: 5vw;
+    text-align: center;
+    color: #ffffff;
+    padding: 3rem 1rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.pop-msg.show {
+    opacity: 1;
+    
+}
+
+#open-msg {
+    position: absolute;
+    font-size: .8rem;
+    top: 35vh;
+    left: 5vw;
+    right: 5vw;
+    text-align: center;
+    display: none;
+    padding: 2rem 0.5rem;
+    background-color: #618dde;
+    color: #ffffff;
+    border-radius: 12px;
+}
+
+#open-msg.empty-list {
+    display: block;
+}
+
+.icon.heart::before {
+    color: #ffffff;
+}

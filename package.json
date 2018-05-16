@@ -1,0 +1,31 @@
+{
+    "name": "ca.algonquincollege.liu00414.myreviewr",
+    "displayName": "ReviewR",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-ios": "^4.5.4",
+        "cordova-plugin-camera": "^4.0.2",
+        "cordova-plugin-statusbar": "^2.4.1",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-camera": {
+                "CAMERA_USAGE_DESCRIPTION": "ReviewR App camera",
+                "PHOTOLIBRARY_USAGE_DESCRIPTION": "Take Photo to review"
+            },
+            "cordova-plugin-statusbar": {}
+        },
+        "platforms": [
+            "ios"
+        ]
+    }
+}
